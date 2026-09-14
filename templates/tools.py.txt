@@ -1,0 +1,24 @@
+"""Generated starter skeleton. Every business tool below is an unimplemented stub."""
+import os
+
+from strands import Agent, tool
+from strands.models.openai import OpenAIModel
+
+SYSTEM_PROMPT = $system_prompt
+
+
+$tool_definitions
+
+
+def create_agent():
+    model = OpenAIModel(
+        client_args={"api_key": os.environ["MODEL_API_KEY"],
+                     "base_url": os.environ["MODEL_BASE_URL"]},
+        model_id=os.environ["MODEL_ID"],
+    )
+    return Agent(model=model, system_prompt=SYSTEM_PROMPT, tools=[$tool_names])
+
+
+if __name__ == "__main__":
+    agent = create_agent()
+    print(agent(input("Request: ")))
