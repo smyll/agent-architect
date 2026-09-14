@@ -1,0 +1,17 @@
+{
+  "assistant": {
+    "purpose": "Give suggestions and drafts from user-provided context.",
+    "components": ["LLM", "optional read-only tools"],
+    "risks": ["Unsupported assumptions", "Unnecessary persistent memory"]
+  },
+  "rag": {
+    "purpose": "Answer questions grounded in a document collection.",
+    "components": ["Retriever", "LLM", "Source references"],
+    "risks": ["Missing evidence", "Unauthorized document access"]
+  },
+  "automation": {
+    "purpose": "Execute bounded changes in an external system.",
+    "components": ["Read tool", "Action tool", "Approval before writes"],
+    "risks": ["Unintended changes", "Duplicate execution"]
+  }
+}
